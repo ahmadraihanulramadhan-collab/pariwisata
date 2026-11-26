@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saudi Serenity - Wisata Arab Saudi</title>
+
+<!-- Bootstrap 5 CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div id="scrollProgress" style="position:fixed;top:0;left:0;width:0;height:3px;background:#b9934f;z-index:9999;"></div>
+
+<!-- NAVBAR -->
+<header class="navbar-custom">
+  <div class="container-custom nav-inner">
+    <a class="logo" href="#beranda">
+      <div class="logo-mark">🌴</div>
+      <div><strong>SAUDI SERENITY</strong><small>EXPLORE • EXPERIENCE • BELONG</small></div>
+    </a>
+    <nav id="navMenu">
+      <a class="active" href="#beranda">Beranda</a>
+      <a href="#tentang">Tentang</a>
+      <a href="#destinasi">Destinasi</a>
+      <a href="#event">Event</a>
+      <a href="#galeri">Galeri</a>
+      <a href="#faq">FAQ</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
+    <div class="search">⌕</div>
+  </div>
+</header>
+
+<!-- HERO SECTION -->
+<section class="hero" id="beranda">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="floating-particles" id="heroParticles"></div>
+  <div class="palm-sway" style="position:absolute;left:-15px;bottom:-12px;font-size:145px;z-index:2;opacity:.75;pointer-events:none">🌴</div>
+  <div class="palm-sway" style="position:absolute;right:-20px;bottom:-18px;font-size:170px;z-index:2;opacity:.72;pointer-events:none;animation-delay:1.2s">🌴</div>
+  <div class="container-custom">
+    <div class="hero-content">
+      <div class="eyebrow fade-up">SAUDI ARABIA</div>
+      <h1 class="fade-up">Temukan Kedamaian<br>di Arab Saudi</h1>
+      <p class="fade-up">Keindahan alam, warisan budaya, dan ketenangan yang menyatu dalam satu perjalanan indah.</p>
+      <a href="#destinasi" class="btn-custom fade-up">Jelajahi Destinasi →</a>
+    </div>
+  </div>
+  <div class="container-custom hero-bottom"><span>ALULA • Warisan Sejarah, Keindahan Abadi</span><div class="hero-dots"><span></span><span></span><span></span></div></div>
+</section>
+
+<!-- TENTANG SECTION -->
+<section class="section about" id="tentang">
+  <div class="container-custom about-grid">
+    <div class="about-copy scroll-reveal">
+      <h2>Tentang Saudi Arabia</h2>
+      <p>Lebih dari Sekadar Destinasi, Ini adalah Pengalaman</p>
+      <p>Arab Saudi menawarkan perpaduan unik antara keindahan alam yang menakjubkan, situs bersejarah yang kaya, serta budaya dan keramahan yang hangat. Dari gurun yang memesona hingga kota modern yang futuristik, setiap sudutnya menyimpan cerita yang mengundang untuk Anda jelajahi.</p>
+      <a href="#destinasi" class="btn-custom">Pelajari Lebih Lanjut →</a>
+      <div class="stats">
+        <div class="stat"><div class="counter" data-target="50">0+</div><small>Destinations</small></div>
+        <div class="stat"><div class="counter" data-target="100">0+</div><small>Tours</small></div>
+        <div class="stat"><div class="counter" data-target="10">0K+</div><small>Visitors</small></div>
+      </div>
+    </div>
+    <div class="features scroll-reveal">
+      <div class="feature"><div class="feature-icon">◈</div><h3>Keindahan Alam</h3><p>Gurun, pegunungan, laut, dan oase yang menakjubkan.</p></div>
+      <div class="feature"><div class="feature-icon">✿</div><h3>Warisan Budaya</h3><p>Situs bersejarah dan tradisi yang kaya makna.</p></div>
+      <div class="feature"><div class="feature-icon">♧</div><h3>Keramahan Lokal</h3><p>Sambutan hangat dari masyarakat Saudi.</p></div>
+      <div class="feature"><div class="feature-icon">♜</div><h3>Pengalaman Modern</h3><p>Fasilitas kelas dunia dan kenyamanan perjalanan.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- DESTINASI SECTION -->
+<section class="section destinations" id="destinasi">
+  <div class="container-custom">
+    <div class="section-head">
+      <div><h2>Daftar Destinasi Wisata</h2><p>Jelajahi keajaiban Arab Saudi, dari situs bersejarah hingga keindahan alam yang memukau.</p></div>
+      <a class="see-all" href="#">Lihat Semua →</a>
+    </div>
+    <div class="cards">
+      <article class="card-item stagger-item" onclick="openModal('AlUla','https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=1000&q=80','Situs bersejarah & alam')">
+        <div class="card-img"><img loading="lazy" src="https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=800&q=80" alt="AlUla"></div>
+        <div class="card-body-custom"><h3>AlUla <span class="arrow">›</span></h3><div class="location">⌖ Situs bersejarah & alam</div></div>
+      </article>
+      <article class="card-item stagger-item" onclick="openModal('Riyadh','https://images.unsplash.com/photo-1586724237569-f3d0c1dee8c6?auto=format&fit=crop&w=1000&q=80','Kota modern & budaya')">
+        <div class="card-img"><img loading="lazy" src="https://images.unsplash.com/photo-1586724237569-f3d0c1dee8c6?auto=format&fit=crop&w=800&q=80" alt="Riyadh"></div>
+        <div class="card-body-custom"><h3>Riyadh <span class="arrow">›</span></h3><div class="location">⌖ Kota modern & budaya</div></div>
+      </article>
+      <article class="card-item stagger-item" onclick="openModal('Jeddah','https://images.unsplash.com/photo-1578895101408-1a36b834405b?auto=format&fit=crop&w=1000&q=80','Laut Merah & kota tua')">
+        <div class="card-img"><img loading="lazy" src="https://images.unsplash.com/photo-1578895101408-1a36b834405b?auto=format&fit=crop&w=800&q=80" alt="Jeddah"></div>
+        <div class="card-body-custom"><h3>Jeddah <span class="arrow">›</span></h3><div class="location">⌖ Laut Merah & kota tua</div></div>
+      </article>
+      <article class="card-item stagger-item" onclick="openModal('Neom','https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?auto=format&fit=crop&w=1000&q=80','Masa depan & inovasi')">
+        <div class="card-img"><img loading="lazy" src="arab1.jpg"alt="Neom"></div>
+        <div class="card-body-custom"><h3>Neom <span class="arrow">›</span></h3><div class="location">⌖ Masa depan & inovasi</div></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- MODAL DESTINASI BOOTSTRAP -->
+<div class="modal fade" id="destinationModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="row g-0">
+        <div class="col-md-6 modal-main-img">
+          <img id="modalImg" src="" alt="Destination">
+        </div>
+        <div class="col-md-6 modal-info position-relative">
+          <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button>
+          <h2 id="modalTitle">AlUla</h2>
+          <div class="rating">★★★★★ &nbsp; 4.8 (1.245 ulasan)</div>
+          <p id="modalDesc">Temukan keindahan alam dan sejarah yang menyatu dalam pengalaman perjalanan yang tenang dan berkesan.</p>
+          <div class="packages">
+            <strong>Paket Wisata Populer</strong>
+            <div class="package">3 Hari 2 Malam <b>Mulai dari $450/pax</b></div>
+            <div class="package">4 Hari 3 Malam <b>Mulai dari $850/pax</b></div>
+            <div class="package">5 Hari 4 Malam <b>Mulai dari $1.050/pax</b></div>
+          </div>
+          <button class="btn-custom" onclick="alert('Terima kasih! Pemesanan paket akan segera diproses.')">Pesan Sekarang</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION EVENT DENGAN FITUR TIKET -->
+<section class="section events" id="event">
+  <div class="container-custom">
+    <div class="section-head"><div><h2>Jelajahi Event Terdekat</h2><p>Saksikan festival, budaya, dan pengalaman seru di Arab Saudi.</p></div></div>
+    <div class="event-track">
+      <div class="event stagger-item" style="background-image:url('arab2.jpg')">
+        <div class="event-content">
+          <h3>Festival Riyadh Season</h3>
+          <p>Seni, budaya, hiburan • Nov 2025 – Mar 2026</p>
+          <button class="btn-ticket" onclick="openTicketModal('Festival Riyadh Season', 50)">🎫 Pesan Tiket ($50)</button>
+        </div>
+      </div>
+      <div class="event stagger-item" style="background-image:url('arab3.jpg')">
+        <div class="event-content">
+          <h3>Jeddah Season</h3>
+          <p>Festival dan hiburan • Oct 2025 – Feb 2026</p>
+          <button class="btn-ticket" onclick="openTicketModal('Jeddah Season', 40)">🎫 Pesan Tiket ($40)</button>
+        </div>
+      </div>
+      <div class="event stagger-item" style="background-image:url('arab4.jpg')">
+        <div class="event-content">
+          <h3>Diriyah Season</h3>
+          <p>Warisan dan budaya • Oct 2025 – Jan 2026</p>
+          <button class="btn-ticket" onclick="openTicketModal('Diriyah Season', 60)">🎫 Pesan Tiket ($60)</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODAL TIKET EVENT BOOTSTRAP -->
+<div class="modal fade" id="ticketModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" style="max-width: 500px;">
+    <div class="modal-content p-4">
+      <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button>
+      <div>
+        <h2 id="ticketEventTitle" style="font-size:26px; margin-bottom:6px;">Pesan Tiket</h2>
+        <p style="font-size:13px; color:var(--muted); margin-bottom:18px;">Isi formulir berikut untuk menyelesaikan pemesanan tiket Anda.</p>
+        <form onsubmit="submitTicket(event)">
+          <div class="mb-3">
+            <label class="form-label" style="font-size:12px; font-weight:600;">Nama Lengkap</label>
+            <input type="text" class="form-control custom-input" id="ticketName" placeholder="Masukkan nama Anda" required>
+          </div>
+          
+          <div class="mb-3">
+            <label class="form-label" style="font-size:12px; font-weight:600;">Jumlah Tiket</label>
+            <input type="number" class="form-control custom-input" id="ticketQty" min="1" max="10" value="1" onchange="updateTotalPrice()" required>
+          </div>
+          
+          <div class="mb-3">
+            <label class="form-label" style="font-size:12px; font-weight:600;">Kategori Tiket</label>
+            <select class="form-select custom-input" id="ticketType" onchange="updateTotalPrice()">
+              <option value="1">Reguler (Harga Standar)</option>
+              <option value="1.5">VIP (Akses Spesial +50%)</option>
+              <option value="2.5">VVIP (Akses Utama +150%)</option>
+            </select>
+          </div>
+          
+          <div class="p-3 my-3 rounded" style="background: var(--cream); display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-size: 13px; font-weight:600;">Total Biaya:</span>
+            <strong id="ticketTotalPrice" style="font-size: 18px; color: var(--green);">$0</strong>
+          </div>
+          
+          <button type="submit" class="btn-custom w-100">Konfirmasi & Bayar Tiket</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- GALERI SECTION -->
+<section class="section gallery" id="galeri">
+  <div class="container-custom">
+    <div class="section-head"><div><h2>Galeri Foto</h2><p>Koleksi momen indah dari berbagai destinasi indah di Arab Saudi.</p></div><a class="see-all" href="#">Lihat Semua →</a></div>
+    <div class="gallery-grid">
+      <div class="gallery-item scroll-reveal"><img loading="lazy" src="arab1.jpg" alt="Gallery 1"></div>
+      <div class="gallery-item scroll-reveal"><img loading="lazy" src="https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=600&q=80" alt="Gallery 2"></div>
+      <div class="gallery-item scroll-reveal"><img loading="lazy" src="https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=600&q=80" alt="Gallery 3"></div>
+      <div class="gallery-item scroll-reveal"><img loading="lazy" src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=600&q=80" alt="Gallery 4"></div>
+      <div class="gallery-item scroll-reveal"><img loading="lazy" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=600&q=80" alt="Gallery 5"></div>
+      <div class="gallery-item scroll-reveal"><img loading="lazy" src="arab3.jpg" alt="Gallery 6"></div>
+      <div class="gallery-item scroll-reveal"><img loading="lazy" src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=600&q=80" alt="Gallery 7"></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONI SECTION -->
+<section class="section testimonials">
+  <div class="container-custom">
+    <div class="section-head"><div><h2>Testimoni Pengunjung</h2><p>Kepuasan para wisatawan adalah kebanggaan kami.</p></div><div>‹ &nbsp; ›</div></div>
+    <div class="testimonial-grid">
+      <div class="testimonial stagger-item"><div class="person"><img class="avatar" src="https://i.pravatar.cc/80?img=47" alt="Sarah Wijaya"><div><b>Sarah Wijaya</b><br><span class="stars">★★★★★</span></div></div><p>“Perjalanan ke AlUla adalah pengalaman yang tak terlupakan. Pemandangan luar biasa dan pelayanannya sangat profesional.”</p><small>Indonesia</small></div>
+      <div class="testimonial stagger-item"><div class="person"><img class="avatar" src="https://i.pravatar.cc/80?img=12" alt="Ahmed Fauzi"><div><b>Ahmed Fauzi</b><br><span class="stars">★★★★★</span></div></div><p>“Arab Saudi benar-benar menakjubkan. Kombinasi antara sejarah, alam, dan budaya membuat kunjungan ini terasa sangat istimewa.”</p><small>Malaysia</small></div>
+      <div class="testimonial stagger-item"><div class="person"><img class="avatar" src="https://i.pravatar.cc/80?img=32" alt="Aleyna Noor"><div><b>Aleyna Noor</b><br><span class="stars">★★★★★</span></div></div><p>“Saya merasa sangat aman dan nyaman selama berlibur. Semua fasilitasnya modern dan masyarakatnya ramah.”</p><small>Singapore</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ ACCORDION BOOTSTRAP -->
+<section class="section faq" id="faq">
+  <div class="container-custom">
+    <div class="section-head"><div><h2>Pertanyaan Umum (FAQ)</h2><p>Temukan jawaban untuk pertanyaan yang paling sering diajukan.</p></div><a class="see-all" href="#">Lihat Semua →</a></div>
+    
+    <div class="accordion" id="faqAccordion">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+            Apa saja dokumen yang dibutuhkan untuk masuk ke Arab Saudi?
+          </button>
+        </h2>
+        <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Persyaratan visa dapat bervariasi sesuai paspor dan tujuan perjalanan. Pastikan memeriksa aturan e-Visa resmi Saudi sebelum keberangkatan.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+            Bagaimana cara memesan paket wisata?
+          </button>
+        </h2>
+        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Anda cukup memilih destinasi yang disukai, lalu tekan tombol "Pesan Sekarang" atau hubungi kami melalui formulir kontak.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+            Kapan waktu terbaik untuk berkunjung?
+          </button>
+        </h2>
+        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Bulan Oktober hingga Maret adalah waktu paling nyaman untuk aktivitas luar ruangan karena cuaca yang relatif sejuk.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+            Apakah tersedia pemandu wisata berbahasa Indonesia?
+          </button>
+        </h2>
+        <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Ya, kami menyediakan layanan pemandu wisata bilingual (Bahasa Indonesia & Arab/Inggris) berdasarkan permintaan saat pemesanan.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KONTAK & PETA SECTION -->
+<section class="section contact-area" id="kontak">
+  <div class="container-custom bottom-grid">
+    <div>
+      <div class="section-head"><div><h2>Peta Lokasi Destinasi</h2><p>Temukan lokasi-lokasi populer di Arab Saudi.</p></div></div>
+      <div class="map-box">
+        <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387190.2799160891!2d44.38274163013233!3d24.77426514755106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f03890d48939%3A0x70b462377b31121d!2sRiyadh%20Saudi%20Arabia!5e0!3m2!1sid!2sid!4v1710000000000!5m2!1sid!2sid" 
+    width="100%" 
+    height="100%" 
+    style="border:0;" 
+    allowfullscreen="" 
+    loading="lazy" 
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+        <div id="saudiMap"></div>
+      </div>
+    </div>
+    <div class="form-box">
+      <h2>Hubungi Kami</h2>
+      <p>Punya pertanyaan? Kirim pesan kepada tim kami.</p>
+      <form onsubmit="event.preventDefault(); alert('Pesan berhasil terkirim!');">
+        <div class="row g-2 mb-2">
+          <div class="col-md-6">
+            <input type="text" class="form-control custom-input" placeholder="Nama Lengkap" required>
+          </div>
+          <div class="col-md-6">
+            <input type="email" class="form-control custom-input" placeholder="Email" required>
+          </div>
+        </div>
+        <div class="mb-3">
+          <textarea class="form-control custom-input" style="height: 80px; resize: none;" placeholder="Tulis pesan Anda di sini..." required></textarea>
+        </div>
+        <button type="submit" class="btn-custom w-100">✈ Kirim Pesan</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container-custom">
+    <div class="footer-top">
+      <div class="logo"><div class="logo-mark">🌴</div><div><strong>SAUDI SERENITY</strong><small>EXPLORE • EXPERIENCE • BELONG</small></div></div>
+      <div class="footer-nav"><a href="#beranda">Beranda</a><a href="#tentang">Tentang</a><a href="#destinasi">Destinasi</a><a href="#event">Event</a><a href="#galeri">Galeri</a><a href="#faq">FAQ</a><a href="#kontak">Kontak</a></div>
+      <div class="social"><span>f</span><span>◎</span><span>▶</span><span>♪</span></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Saudi Serenity. All rights reserved.</span><span>Jelajahi keindahan, rasakan ketenangan.</span></div>
+  </div>
+</footer>
+
+<!-- Bootstrap 5 JavaScript Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+
+<script src="script.js"></script>
+</body>
+</html>
